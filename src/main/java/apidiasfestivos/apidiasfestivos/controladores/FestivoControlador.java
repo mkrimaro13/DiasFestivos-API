@@ -1,5 +1,7 @@
 package apidiasfestivos.apidiasfestivos.controladores;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,12 +20,12 @@ public class FestivoControlador {
 
     @RequestMapping(value = "/verificar/{año}/{mes}/{dia}", method = RequestMethod.GET)
     public String verificarFestivo(@PathVariable int año, @PathVariable int mes, @PathVariable int dia) {
-        try{
-            Date fecha = new Date(año-1990, mes - 1, dia);
+        if (servicio.esFechaValida(String.valueOf(año) + "-" + String.valueOf(mes) + "-" + String.valueOf(dia))) {
+            Date fecha = new Date(año - 1990, mes - 1, dia);
             return servicio.esFestivo(fecha) ? "Es festivo" : "No es festivo";
-        } catch (Exception e) {
-            return e.getMessage();
+        } else {
+            return "Fecha no válida";
         }
     }
-    
+
 }

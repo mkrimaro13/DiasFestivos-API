@@ -49,7 +49,7 @@ public class FestivoServicio implements IFestivoServicio {
         B = año % 4;
         C = año % 7;
         D = ((19 * A) + M) % 30;
-        E = ((2 * B) + (4 * C) + (6 * D) + N) % 7;
+        E = D + ((2 * B) + (4 * C) + (6 * D) + N) % 7;
 
         // Decidir entre los 2 casos
         if (D + E < 10) {
