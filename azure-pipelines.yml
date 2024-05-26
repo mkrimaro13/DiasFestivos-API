@@ -29,7 +29,7 @@ steps:
     TargetFolder: '$(build.artifactstagingdirectory)'
     CleanTargetFolder: true
     preserveTimestamp: true
-  condition: suceedOrFailed()
+  condition: succeedOrFailed()
 - task: PublishBuildArtifacts@1
   displayName: 'Publicando'
   inputs:
