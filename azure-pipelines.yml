@@ -36,4 +36,4 @@ steps:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
     ArtifactName: 'api'
     publishLocation: 'Container'
-  condition: suceedOrFailed()
+  condition: succeededOrFailed()
