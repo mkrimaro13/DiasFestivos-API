@@ -25,7 +25,7 @@ steps:
   displayName: 'Copiand archivos'
   inputs:
     SourceFolder: '$(Build.SourcesDirectory)'
-    Contents: '**/*.jar'
+    Contents: '**/apidiasfestivos-0.0.1-SNAPSHOT.jar'
     TargetFolder: '$(build.artifactstagingdirectory)'
     CleanTargetFolder: true
     preserveTimestamp: true
