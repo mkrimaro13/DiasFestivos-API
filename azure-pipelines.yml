@@ -22,7 +22,7 @@ steps:
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'package'
 - task: CopyFiles@2
-  displayName: 'Copiand archivos'
+  displayName: 'Copiando archivos'
   inputs:
     SourceFolder: '$(Build.SourcesDirectory)'
     Contents: '**/apidiasfestivos-0.0.1-SNAPSHOT.jar'
